@@ -6,7 +6,7 @@
   "dependencies": {
     "cors": "^2.5.2",
     "express": "^4.10.4",
-    "framer": "^0.5.4",
+    "framer": "git://github.com/ahultgren/framer",
     "morgan": "^1.5.0",
     "nconf": "^0.7.1"
   },

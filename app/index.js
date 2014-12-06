@@ -15,7 +15,8 @@ var framer = new Framer({
     secret: nconf.get('AWS_SECRET_ACCESS_KEY'),
     bucket: nconf.get('S3_BUCKET'),
     region: nconf.get('S3_REGION')
-  }
+  },
+  useImageMagick: true
 });
 
 var uploader = framer.handleUpload({});
