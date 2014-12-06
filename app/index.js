@@ -18,14 +18,7 @@ var framer = new Framer({
   }
 });
 
-var uploader = framer.handleUpload({
-  //## Check that the request comes from the api
-  /*authHandler: function (authValue, callback) {
-    console.log(authValue);
-    callback(null, '1');
-  },*/
-});
-
+var uploader = framer.handleUpload({});
 var server = framer.serveImage({
   cacheMaxAge: 3600
 });
@@ -34,10 +27,18 @@ app.use(morgan('combined'));
 app.use(cors());
 
 app.post('/img', function (req, res) {
+  console.log('Uploading image');
+
+  if(req.header('Authorization') !== nconf.get('TOKEN')) {
+    console.log('But not allowed to upload!');
+    return res.status(401).send('');
+  }
+
   uploader(req, res);
 });
 
 app.use(function (req, res) {
+  console.log('Serving image');
   server(req, res);
 });
 
