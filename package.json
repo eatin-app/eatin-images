@@ -1,0 +1,28 @@
+{
+  "name": "eatin-images",
+  "version": "1.0.0",
+  "description": "Store images on s3 and resize them on request",
+  "main": "./bin/www",
+  "dependencies": {
+    "cors": "^2.5.2",
+    "express": "^4.10.4",
+    "framer": "^0.5.4",
+    "morgan": "^1.5.0",
+    "nconf": "^0.7.1"
+  },
+  "devDependencies": {
+    "gulp": "~3.8.0",
+    "gulp-jshint": "~1.8.4",
+    "gulp-rename": "~1.2.0",
+    "gulp-notify": "~1.4.2",
+    "gulp-util": "~3.0",
+    "jshint-stylish": "~0.4.0",
+    "map-stream": "~0.1.0"
+  },
+  "scripts": {
+    "start": "node .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Andreas Hultgren",
+  "license": "ISC"
+}

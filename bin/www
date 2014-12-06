@@ -1,0 +1,18 @@
+#!/usr/bin/env node
+
+var nconf = require('nconf');
+var app, server;
+
+nconf.env().file({ file: 'config.json' }).defaults({
+  PORT: 3004,
+  AWS_ACCESS_KEY_ID: '',
+  AWS_SECRET_ACCESS_KEY: '',
+  S3_BUCKET: '',
+  S3_REGION: ''
+});
+
+app = require('../app');
+
+server = app.listen(nconf.get('PORT'), function() {
+  console.log('Listening on port ' + server.address().port);
+});
